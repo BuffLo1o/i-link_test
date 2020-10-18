@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PostController@index')->name('post');
+Route::get('/','App\Http\Controllers\PostController@index')->name('post');
+
+Route::get('/like/{post}','App\Http\Controllers\PostController@like');
+
+Route::get('/popular/{$limit}', 'App\Http\Controllers\PostController@popular')->name('popular');
+
+Route::post('/like/{post}','App\Http\Controllers\PostController@like')->name('like');
